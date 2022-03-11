@@ -18,7 +18,7 @@ const questions = [
       type: "multiple",
       difficulty: "easy",
       question:
-        "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+        "In the programming language Java, which of these keywords would you put on a variable to make sure it doesnt get modified?",
       correct_answer: "Final",
       incorrect_answers: ["Static", "Private", "Public"],
     },
@@ -99,15 +99,15 @@ const questions = [
       incorrect_answers: ["Python", "C", "Jakarta"],
     },
   ];
- 
-
   // First I will make a div for displaying the questions on the page (the questions[something].question) DONE! 
   // I will then add them all as in seperate divs.  DONE! 
-  // Then I will try and get at least the "questions asked" to display in seperate divs. using Radio buttons ??? 
-  // afterwards I guess I will have to add Radio buttons and attach the correct and incorrect values to them. 
+  // Then I will try and get at least the "questions asked" to display in seperate divs. using Radio buttons ??? DONE! 
+  // afterwards I guess I will have to add Radio buttons and attach the correct and incorrect values to them. DONE! 
+  // So, how do I get the value if the correct field is marked?????
 
 
-// This is the function that creates the divs which displays the questions from the above objects:
+
+  // This is the function that creates the divs which displays the questions from the above objects:
 let createTheContainersForTheQuestions = () => {
     let questionsContainer = document.querySelector(".questions-section");
     for (let i = 0; i < questions.length; i++) { 
@@ -126,12 +126,12 @@ let createTheContainersForTheQuestions = () => {
         newDiv.classList.add("individual-questions")
         newDiv2.classList.add("answers")
         newDiv3.classList.add("answers2")
- 
 }
 }
 createTheContainersForTheQuestions();
  
 
+// This below function creates the radio buttons and adds an event listener to it
  let createResultsIntoRadioButtoins = () => {
      let allAnswers = document.querySelectorAll(".answers")
     for (let i = 0; i < allAnswers.length; i++) {
@@ -150,113 +150,24 @@ createTheContainersForTheQuestions();
              </div>`
    )
    .join(' ');
-     // add an event listener for the change event
+     // This below add the eventlistener
      const radioButtons = document.getElementsByTagName('input');
     for(const radioButton of radioButtons){
          radioButton.addEventListener('click', showSelected);
      }        
-     
+     // This is the function that shows what I showing the event firering in Console.log as well as in the #output field
      function showSelected(e) {
          console.log(e);
          if (this.checked) {
-
             document.querySelector('#output').innerText = `You selected ${this.value}`;
+            
 
+            // THIS LAST PART IS NOT WORKING AT THE MOMENT
             }
          else if (this.checked == correctAnswers2)  {
             document.querySelector('#output2').innerText = `These are your points: ${this.value}`
-
          }
         }
     }
  }
  createResultsIntoRadioButtoins();
-
-
- //This function takes the value 
-
-
-
-
-   // Start of trying to add the Radio buttons - Right now it only add for the last one - si I am probably missing an [i] somewhere...
-        
-
-
-
-
-
- /* 
- let incorrectAnswers2 = questions[1].incorrect_answers;
- let correctAnswers2 = questions[1].correct_answer;
- let correctAndIncorrectAnswers = incorrectAnswers2.concat(correctAnswers2);
- 
- const sizes = correctAndIncorrectAnswers; // Here I am grabbing all the answers (However now I do not know which on is the correct one).
-
-
-
- // generate the radio groups   
- const group = document.querySelector('#group');
- group.innerHTML = sizes
-   .map(
-     (size) => `<div>
-                 <input type="radio" name="size" value="${size}" id="${size}">
-                  <label for="${size}">${size}</label>
-             </div>`
-   )
-   .join(' ');
- */
-/* 
-              // add an event listener for the change event
-        const radioButtons = document.querySelectorAll('input[name="size"]');
-        for(const radioButton of radioButtons){
-            radioButton.addEventListener('change', showSelected);
-        }        
-        
-        function showSelected(e) {
-            console.log(e);
-            if (this.checked) {
-                document.querySelector('#output').innerText = `You selected ${this.value}`;
-            }
-        }
-
-let createRadioButtons = () => {
-    let newInputField = document.createElement("input");
-    newInputField.type = "radio"
-    newInputField.id = "radiobutton"
-    newInputField.value = 1;
-
-}
-
- */
-
-
-
-
-
-
-
-
-/* 
-let createRadioButtons = () => {
-    let questionsContainer = document.querySelector(".questions-section");
-    let individualQuestions = document.querySelectorAll(".individual-questions"); 
-    
-    for (let i = 0; i < questions.length; i++) {
-    let newDivForAnswers = document.createElement("div");
-
-/*     let correctAnswers = questions[i].correct_answer; */ //This returns a single String Output
-   /*  let incorrectAnswers = questions[i].incorrect_answers; //This returns another Array
-    
-    newDivForAnswers.innerText += questions[i].correct_answer; 
-    questionsContainer.appendChild(newDivForAnswers)
-    newDivForAnswers.classList.add("correct-answer")
-}}
- */
-
-
-
-/* 
-  window.onload = function () {
-    alert("Hello")
-};
-     */
