@@ -150,23 +150,32 @@ createTheContainersForTheQuestions();
              </div>`
    )
    .join(' ');
-
-
      // add an event listener for the change event
-     const radioButtons = document.querySelectorAll('input[name="size"]');
-     for(const radioButton of radioButtons){
-         radioButton.addEventListener('change', showSelected);
+     const radioButtons = document.getElementsByTagName('input');
+    for(const radioButton of radioButtons){
+         radioButton.addEventListener('click', showSelected);
      }        
      
      function showSelected(e) {
          console.log(e);
          if (this.checked) {
-             document.querySelector('#output').innerText = `You selected ${this.value}`;
+
+            document.querySelector('#output').innerText = `You selected ${this.value}`;
+
+            }
+         else if (this.checked == correctAnswers2)  {
+            document.querySelector('#output2').innerText = `These are your points: ${this.value}`
+
          }
-    }
+        }
     }
  }
  createResultsIntoRadioButtoins();
+
+
+ //This function takes the value 
+
+
 
 
    // Start of trying to add the Radio buttons - Right now it only add for the last one - si I am probably missing an [i] somewhere...
