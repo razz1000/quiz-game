@@ -145,7 +145,7 @@ createTheContainersForTheQuestions();
         allAnswersInLoop.innerHTML += sizes
    .map(
      (size) => `<div>
-                 <input type="radio" name="size" value="${size}" id="${size}">
+                 <input type="radio" name="${questions[i].question}" value="${size}" id="${size}">
                   <label for="${size}">${size}</label>
              </div>`
    )
