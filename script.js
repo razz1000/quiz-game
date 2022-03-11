@@ -124,15 +124,51 @@ let createTheContainersForTheQuestions = () => {
         newDiv.appendChild(newDiv3)
         
         newDiv.classList.add("individual-questions")
-        newDiv2.classList.add("correct-answer")
-        newDiv3.classList.add("incorrect-answer")
+        newDiv2.classList.add("answer")
+        newDiv3.classList.add("incorrect-answers")
+ 
+       
+       
+       // Start of trying to add the Radio buttons - Right now it only add for the last one - si I am probably missing an [i] somewhere...
+        let incorrectAnswers2 = questions[i].incorrect_answers;
+        let correctAnswers2 = questions[i].correct_answer;
+        let correctAndIncorrectAnswers = incorrectAnswers2.concat(correctAnswers2);
+
+        const sizes = correctAndIncorrectAnswers;
+
+        const group = document.querySelector('#group');
+    group.innerHTML = sizes
+   .map(
+     (size) => `<div>
+                 <input type="radio" name="size" value="${size}" id="${size}">
+                  <label for="${size}">${size}</label>
+             </div>`
+   )
+   .join(' ');
+
+
 
 }
 }
 createTheContainersForTheQuestions();
+ 
+
+/* let createResultsIntoRadioButtoins = () => {
+     let allAnswers = document.querySelectorAll(".answer")
+    for (let i = 0; i < allAnswers.length; i++) {
+
+    }
+ }
+ */
+
+ /* 
+ let incorrectAnswers2 = questions[1].incorrect_answers;
+ let correctAnswers2 = questions[1].correct_answer;
+ let correctAndIncorrectAnswers = incorrectAnswers2.concat(correctAnswers2);
+ 
+ const sizes = correctAndIncorrectAnswers; // Here I am grabbing all the answers (However now I do not know which on is the correct one).
 
 
-const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']; // Here I need to somehwow grap all the answers
 
  // generate the radio groups   
  const group = document.querySelector('#group');
@@ -144,8 +180,8 @@ const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']; // Here I need to somehwow gra
              </div>`
    )
    .join(' ');
-
-
+ */
+/* 
               // add an event listener for the change event
         const radioButtons = document.querySelectorAll('input[name="size"]');
         for(const radioButton of radioButtons){
@@ -159,11 +195,6 @@ const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']; // Here I need to somehwow gra
             }
         }
 
-
-
-
-
-/* 
 let createRadioButtons = () => {
     let newInputField = document.createElement("input");
     newInputField.type = "radio"
