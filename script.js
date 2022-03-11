@@ -101,9 +101,9 @@ const questions = [
   ];
  
 
-  // First I will make a div for displaying the questions on the page (the questions[something].question)
-  // I will then add them all as in seperate divs. 
-  // Then I will try and get at least the "questions asked" to display in seperate divs. 
+  // First I will make a div for displaying the questions on the page (the questions[something].question) DONE! 
+  // I will then add them all as in seperate divs.  DONE! 
+  // Then I will try and get at least the "questions asked" to display in seperate divs. using Radio buttons ??? 
   // afterwards I guess I will have to add Radio buttons and attach the correct and incorrect values to them. 
 
 
@@ -120,6 +120,22 @@ let createTheContainersForTheQuestions = () => {
 }
 createTheContainersForTheQuestions();
 
+
+let createRadioButtons = () => {
+    let questionsContainer = document.querySelector(".questions-section");
+    let individualQuestions = document.querySelectorAll(".individual-questions"); 
+    
+    for (let i = 0; i < questions.length; i++) {
+    let newDivForAnswers = document.createElement("div");
+
+/*     let correctAnswers = questions[i].correct_answer; */ //This returns a single String Output
+    let incorrectAnswers = questions[i].incorrect_answers; //This returns another Array
+    
+    newDivForAnswers.innerText += questions[i].correct_answer; 
+    questionsContainer.appendChild(newDivForAnswers)
+    newDivForAnswers.classList.add("correct-answer")
+}}
+createRadioButtons();
 
 
 
