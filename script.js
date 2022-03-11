@@ -124,20 +124,25 @@ let createTheContainersForTheQuestions = () => {
         newDiv.appendChild(newDiv3)
         
         newDiv.classList.add("individual-questions")
-        newDiv2.classList.add("answer")
-        newDiv3.classList.add("incorrect-answers")
+        newDiv2.classList.add("answers")
+        newDiv3.classList.add("answers")
  
-       
-       
-       // Start of trying to add the Radio buttons - Right now it only add for the last one - si I am probably missing an [i] somewhere...
+}
+}
+createTheContainersForTheQuestions();
+ 
+
+ let createResultsIntoRadioButtoins = () => {
+     let allAnswers = document.querySelectorAll(".answers")
+    for (let i = 0; i < allAnswers.length; i++) {
         let incorrectAnswers2 = questions[i].incorrect_answers;
         let correctAnswers2 = questions[i].correct_answer;
         let correctAndIncorrectAnswers = incorrectAnswers2.concat(correctAnswers2);
 
         const sizes = correctAndIncorrectAnswers;
 
-        const group = document.querySelector('#group');
-    group.innerHTML = sizes
+        const allAnswersInLoop = document.querySelectorAll('.answers')[i];
+        allAnswersInLoop.innerHTML += sizes
    .map(
      (size) => `<div>
                  <input type="radio" name="size" value="${size}" id="${size}">
@@ -145,21 +150,17 @@ let createTheContainersForTheQuestions = () => {
              </div>`
    )
    .join(' ');
-
-
-
-}
-}
-createTheContainersForTheQuestions();
- 
-
-/* let createResultsIntoRadioButtoins = () => {
-     let allAnswers = document.querySelectorAll(".answer")
-    for (let i = 0; i < allAnswers.length; i++) {
-
     }
  }
- */
+ createResultsIntoRadioButtoins();
+
+
+   // Start of trying to add the Radio buttons - Right now it only add for the last one - si I am probably missing an [i] somewhere...
+        
+
+
+
+
 
  /* 
  let incorrectAnswers2 = questions[1].incorrect_answers;
