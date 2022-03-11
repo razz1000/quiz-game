@@ -131,6 +131,56 @@ let createTheContainersForTheQuestions = () => {
 }
 createTheContainersForTheQuestions();
 
+
+const sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL']; // Here I need to somehwow grap all the answers
+
+ // generate the radio groups   
+ const group = document.querySelector('#group');
+ group.innerHTML = sizes
+   .map(
+     (size) => `<div>
+                 <input type="radio" name="size" value="${size}" id="${size}">
+                  <label for="${size}">${size}</label>
+             </div>`
+   )
+   .join(' ');
+
+
+              // add an event listener for the change event
+        const radioButtons = document.querySelectorAll('input[name="size"]');
+        for(const radioButton of radioButtons){
+            radioButton.addEventListener('change', showSelected);
+        }        
+        
+        function showSelected(e) {
+            console.log(e);
+            if (this.checked) {
+                document.querySelector('#output').innerText = `You selected ${this.value}`;
+            }
+        }
+
+
+
+
+
+/* 
+let createRadioButtons = () => {
+    let newInputField = document.createElement("input");
+    newInputField.type = "radio"
+    newInputField.id = "radiobutton"
+    newInputField.value = 1;
+
+}
+
+ */
+
+
+
+
+
+
+
+
 /* 
 let createRadioButtons = () => {
     let questionsContainer = document.querySelector(".questions-section");
