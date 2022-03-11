@@ -116,8 +116,8 @@ let createTheContainersForTheQuestions = () => {
         let newDiv3 = document.createElement("div");
 
         newDiv.innerText += questions[i].question;
-        newDiv2.innerText += questions[i].correct_answer;
-        newDiv3.innerText += questions[i].incorrect_answers;
+/*         newDiv2.innerText += questions[i].correct_answer;
+        newDiv3.innerText += questions[i].incorrect_answers; */
         
         questionsContainer.appendChild(newDiv);
         newDiv.appendChild(newDiv2)
@@ -125,7 +125,7 @@ let createTheContainersForTheQuestions = () => {
         
         newDiv.classList.add("individual-questions")
         newDiv2.classList.add("answers")
-        newDiv3.classList.add("answers")
+        newDiv3.classList.add("answers2")
  
 }
 }
@@ -141,7 +141,7 @@ createTheContainersForTheQuestions();
 
         const sizes = correctAndIncorrectAnswers;
 
-        const allAnswersInLoop = document.querySelectorAll('.answers')[i];
+        const allAnswersInLoop = document.querySelectorAll('.answers')[i]; // Need this here again as I need to loop through it. Cannot do that above. 
         allAnswersInLoop.innerHTML += sizes
    .map(
      (size) => `<div>
