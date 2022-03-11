@@ -9,6 +9,11 @@ h1 {
     margin-bottom: 2%;
 }
 
+h3 {
+    color: rgb(158, 152, 152);
+    font-size: 3em;
+}
+
 .questions-section { 
     display: grid;
     gap: 1em;
@@ -38,3 +43,12 @@ h1 {
     background: rgba(215, 239, 245, 0.88);
     cursor: pointer;
 }
+
+.output-div {
+    text-align: center;
+}
+
+#output {
+    color: rgb(158, 152, 152);
+    font-size: 3em;
+    }

@@ -139,7 +139,7 @@ createTheContainersForTheQuestions();
         let correctAnswers2 = questions[i].correct_answer;
         let correctAndIncorrectAnswers = incorrectAnswers2.concat(correctAnswers2);
 
-        const sizes = correctAndIncorrectAnswers;
+        const sizes = correctAndIncorrectAnswers; // I put the correct and incorrect answers into 1 variable 
 
         const allAnswersInLoop = document.querySelectorAll('.answers')[i]; // Need this here again as I need to loop through it. Cannot do that above. 
         allAnswersInLoop.innerHTML += sizes
@@ -150,6 +150,20 @@ createTheContainersForTheQuestions();
              </div>`
    )
    .join(' ');
+
+
+     // add an event listener for the change event
+     const radioButtons = document.querySelectorAll('input[name="size"]');
+     for(const radioButton of radioButtons){
+         radioButton.addEventListener('change', showSelected);
+     }        
+     
+     function showSelected(e) {
+         console.log(e);
+         if (this.checked) {
+             document.querySelector('#output').innerText = `You selected ${this.value}`;
+         }
+    }
     }
  }
  createResultsIntoRadioButtoins();
