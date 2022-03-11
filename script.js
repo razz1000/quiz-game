@@ -121,7 +121,7 @@ let createTheContainersForTheQuestions = () => {
         
         questionsContainer.appendChild(newDiv);
         newDiv.appendChild(newDiv2)
-        newDiv.appendChild(newDiv3)
+        /* newDiv.appendChild(newDiv3) */
         
         newDiv.classList.add("individual-questions")
         newDiv2.classList.add("answers")
