@@ -112,15 +112,26 @@ let createTheContainersForTheQuestions = () => {
     let questionsContainer = document.querySelector(".questions-section");
     for (let i = 0; i < questions.length; i++) { 
         let newDiv = document.createElement("div");
-        
+        let newDiv2 = document.createElement("div");
+        let newDiv3 = document.createElement("div");
+
         newDiv.innerText += questions[i].question;
+        newDiv2.innerText += questions[i].correct_answer;
+        newDiv3.innerText += questions[i].incorrect_answers;
+        
         questionsContainer.appendChild(newDiv);
+        newDiv.appendChild(newDiv2)
+        newDiv.appendChild(newDiv3)
+        
         newDiv.classList.add("individual-questions")
+        newDiv2.classList.add("correct-answer")
+        newDiv3.classList.add("incorrect-answer")
+
 }
 }
 createTheContainersForTheQuestions();
 
-
+/* 
 let createRadioButtons = () => {
     let questionsContainer = document.querySelector(".questions-section");
     let individualQuestions = document.querySelectorAll(".individual-questions"); 
@@ -129,14 +140,13 @@ let createRadioButtons = () => {
     let newDivForAnswers = document.createElement("div");
 
 /*     let correctAnswers = questions[i].correct_answer; */ //This returns a single String Output
-    let incorrectAnswers = questions[i].incorrect_answers; //This returns another Array
+   /*  let incorrectAnswers = questions[i].incorrect_answers; //This returns another Array
     
     newDivForAnswers.innerText += questions[i].correct_answer; 
     questionsContainer.appendChild(newDivForAnswers)
     newDivForAnswers.classList.add("correct-answer")
 }}
-createRadioButtons();
-
+ */
 
 
 
