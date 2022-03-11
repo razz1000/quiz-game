@@ -1,0 +1,10 @@
+body {
+    background-color: rgb(75, 73, 73);
+}
+
+h1 {
+    text-align: center;
+    color: rgb(158, 152, 152);
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
